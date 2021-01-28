@@ -21,10 +21,10 @@ int power(int base, int exponent){
 //Hardware: TMP36 - Analog Temperature Sensor
 //"The voltage out is 0V at -50°C [-58°F] and 1.75V at 125°C [257°F]."
 int readTemp(){
-    double voltage = analogRead(A0) * (5.0/1024.0);
+    double voltage = analogRead(A0) * (5.0/1024.0); //voltage needs this conversion for some reason. It was not in their docs...
+//    Serial.println(voltage);
     int tempInC = 100 * voltage - 50;
     int tempInF = 180 * voltage - 58;
-//    Serial.println(voltage);
 //    Serial.println(tempInC);
 //    Serial.println(tempInF);
     
